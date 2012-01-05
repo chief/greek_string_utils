@@ -1,0 +1,31 @@
+= GreekStringUtils
+
+== Description
+
+In general greek strings dont preserve accents when upcase. This module simply provides a method
+to correct this issue. For other cases (capitalize, downcase etc) +unicode+, +mb_chars+ etc are doing
+their job very well. Gem's name is more ambitious than what it really provides :)
+
+== Install
+
+gem install 'greek_string_utils'
+
+== Example
+
+  require 'greek_string_utils'
+  include GreekStringUtils
+
+  a = 'το 2012 η ελλάδα θα είναι δεύτερη σε ύφεση στον κόσμο'
+  puts upperfix(a) # => 'ΤΟ 2012 Η ΕΛΛΑΔΑ ΘΑ ΕΙΝΑΙ ΔΕΥΤΕΡΗ ΣΕ ΥΦΕΣΗ ΣΤΟΝ ΚΟΣΜΟ'
+
+if you want to use it in a rails app:
+
+  gem 'greek_string_utils'
+
+And normally in application_helper.rb:
+
+  include GreekStringUtils
+
+== Credits
+
+Eric Coen https://github.com/eirc
