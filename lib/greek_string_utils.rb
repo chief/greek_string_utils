@@ -56,4 +56,32 @@ module GreekStringUtils
       end
     end.join
   end
+
+  def remove_accents(string)
+   string.chars.map do |char|
+      case char
+      when 'ά' then 'α'
+      when 'έ' then 'ε'
+      when 'ή' then 'η'
+      when 'ί' then 'ι'
+      when 'ό' then 'ο'
+      when 'ύ' then 'υ'
+      when 'ώ' then 'ω'
+      when 'Ά' then 'Α'
+      when 'Έ' then 'Ε'
+      when 'Ή' then 'Η'
+      when 'Ί' then 'Ι'
+      when 'Ϊ' then 'Ι'
+      when 'Ό' then 'Ο'
+      when 'Ύ' then 'Υ'
+      when 'Ώ' then 'Ω'
+      when 'ϊ' then 'ι'
+      when 'ϋ' then 'υ'
+      # Downcase characters with acute and diaeresis accents (diaeresis preserved in upcase)
+      when 'ΐ' then 'ι'
+      when 'ΰ' then 'υ'
+      else char
+      end
+    end.join
+  end
 end

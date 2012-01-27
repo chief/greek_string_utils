@@ -16,4 +16,9 @@ describe 'GreekStringUtils' do
     upperfix(a).should eql('ΑΥΤΟ EINAI ΕΝΑ TEST')
   end
 
+  it 'should remove accents & diaeresis' do
+    a = 'αυτο είναι μϊα φράση με τόνους και δΪαρεΐσεις'
+    remove_accents(a).should eql('αυτο ειναι μια φραση με τονους και δΙαρεισεις')
+  end
+
 end
