@@ -28,4 +28,4 @@ And normally in application_helper.rb:
 
 == Credits
 
-Eric Coen https://github.com/eirc
+Eric Cohen https://github.com/eirc
