@@ -2,9 +2,14 @@
 
 == Description
 
-In general greek strings dont preserve accents when upcase. This module simply provides a method
-to correct this issue. For other cases (capitalize, downcase etc) +unicode+, +mb_chars+ etc are doing
-their job very well. Gem's name is more ambitious than what it really provides :)
+This module simply provides some methods to handle issues with greek letters
+
+1. upperfix: In general greek strings dont preserve accents when upcase.
+2. remove_accents: Simply removes all accents
+3. greek_sort: Simply sorts correctly greek letters
+
+For other cases (capitalize, downcase etc) +unicode+, +mb_chars+ etc are doing
+their job very well.
 
 == Install
 
@@ -17,6 +22,12 @@ gem install 'greek_string_utils'
 
   a = 'το 2012 η ελλάδα θα είναι δεύτερη σε ύφεση στον κόσμο'
   upperfix(a) # => 'ΤΟ 2012 Η ΕΛΛΑΔΑ ΘΑ ΕΙΝΑΙ ΔΕΥΤΕΡΗ ΣΕ ΥΦΕΣΗ ΣΤΟΝ ΚΟΣΜΟ'
+
+  a = %w(αβ άβ άα αα)
+  greek_sort(a) # => %w(άα αα άβ αβ)
+
+  a = 'κρύο'
+  remove_accents(a) # => 'κρυο'
 
 if you want to use it in a rails app:
 
