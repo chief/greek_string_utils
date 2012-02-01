@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'pry'
+
 module GreekStringUtils
   def upperfix(string)
     string.chars.map do |char|
@@ -77,11 +79,23 @@ module GreekStringUtils
       when 'Ώ' then 'Ω'
       when 'ϊ' then 'ι'
       when 'ϋ' then 'υ'
-      # Downcase characters with acute and diaeresis accents (diaeresis preserved in upcase)
       when 'ΐ' then 'ι'
       when 'ΰ' then 'υ'
       else char
       end
     end.join
+  end
+
+  def has_accent?(string)
+    string.match(/ά|έ|ή|ί|ό|ύ|ώ|Ά|Έ|Ή|Ί|Ϊ|Ό|Ύ|Ώ|ϊ|ϋ|ΐ|ΰ/) ? true : false
+  end
+
+  def greek_sort(array)
+    array.sort do |a, b|
+      x = remove_accents(a)
+      y = remove_accents(b)
+
+      x == y ?  a <=> b : x <=> y
+    end
   end
 end
