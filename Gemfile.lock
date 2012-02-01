@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    greek_string_utils (0.0.1)
+    greek_string_utils (0.0.3)
 
 GEM
   remote: http://rubygems.org/
