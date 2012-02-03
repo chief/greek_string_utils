@@ -1,6 +1,5 @@
 # encoding: utf-8
-
-require 'pry'
+#require 'pry'
 
 module GreekStringUtils
   def upperfix(string)
