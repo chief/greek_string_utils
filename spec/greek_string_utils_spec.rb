@@ -46,4 +46,9 @@ describe 'GreekStringUtils' do
     greek_sort(a).should eql(%w(α αβ άβας))
   end
 
+  it 'should keep ή in upcase as Ή' do
+    a = 'ή'
+    upperfix(a).should eql('Ή')
+  end
+
 end

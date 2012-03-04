@@ -34,7 +34,8 @@ module GreekStringUtils
       # Downcase characters with acute accents
       when 'ά' then 'Α'
       when 'έ' then 'Ε'
-      when 'ή' then 'Η'
+      when 'ή'
+        string.to_s.size > 1 ? 'H' : 'Ή'
       when 'ί' then 'Ι'
       when 'ό' then 'Ο'
       when 'ύ' then 'Υ'
