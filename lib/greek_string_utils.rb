@@ -3,7 +3,7 @@
 
 module GreekStringUtils
   def upperfix(string)
-    string.chars.map do |char|
+    string.to_s.chars.map do |char|
       case char
       # Downcase characters
       when 'α' then 'Α'
@@ -34,7 +34,8 @@ module GreekStringUtils
       # Downcase characters with acute accents
       when 'ά' then 'Α'
       when 'έ' then 'Ε'
-      when 'ή' then 'Η'
+      when 'ή'
+        string.to_s.size > 1 ? 'H' : 'Ή'
       when 'ί' then 'Ι'
       when 'ό' then 'Ο'
       when 'ύ' then 'Υ'
@@ -59,7 +60,7 @@ module GreekStringUtils
   end
 
   def remove_accents(string)
-   string.chars.map do |char|
+   string.to_s.chars.map do |char|
       case char
       when 'ά' then 'α'
       when 'έ' then 'ε'
@@ -86,7 +87,7 @@ module GreekStringUtils
   end
 
   def has_accent?(string)
-    string.match(/ά|έ|ή|ί|ό|ύ|ώ|Ά|Έ|Ή|Ί|Ϊ|Ό|Ύ|Ώ|ϊ|ϋ|ΐ|ΰ/) ? true : false
+    string.to_s.match(/ά|έ|ή|ί|ό|ύ|ώ|Ά|Έ|Ή|Ί|Ϊ|Ό|Ύ|Ώ|ϊ|ϋ|ΐ|ΰ/) ? true : false
   end
 
   def greek_sort(array)
