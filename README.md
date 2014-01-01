@@ -1,6 +1,11 @@
-= GreekStringUtils
+# GreekStringUtils
 
-== Description
+## Note
+
+This project is a subset of a larger private repo. I hope that it will become
+public soon.
+
+## Description
 
 This module simply provides some methods to handle issues with greek letters
 
@@ -11,12 +16,15 @@ This module simply provides some methods to handle issues with greek letters
 For other cases (capitalize, downcase etc) +unicode+, +mb_chars+ etc are doing
 their job very well.
 
-== Install
+## Install
 
-gem install 'greek_string_utils'
+```
+  gem install 'greek_string_utils'
+```
 
-== Example
+## Usage
 
+```ruby
   require 'greek_string_utils'
   include GreekStringUtils
 
@@ -28,15 +36,24 @@ gem install 'greek_string_utils'
 
   a = 'κρύο'
   remove_accents(a) # => 'κρυο'
+```
 
 if you want to use it in a rails app:
 
+```
   gem 'greek_string_utils'
-
+```
 And normally in application_helper.rb:
 
+```
   include GreekStringUtils
+```
 
-== Credits
+## Credits
 
 Eric Cohen https://github.com/eirc
+
+
+## License
+
+greek_string_utils is released under the [MIT License](http://opensource.org/licenses/MIT)
