@@ -18,7 +18,7 @@ their job very well.
 
 ## Install
 
-```
+```ruby
   gem install 'greek_string_utils'
 ```
 
@@ -40,12 +40,12 @@ their job very well.
 
 if you want to use it in a rails app:
 
-```
+```ruby
   gem 'greek_string_utils'
 ```
 And normally in application_helper.rb:
 
-```
+```ruby
   include GreekStringUtils
 ```
 
